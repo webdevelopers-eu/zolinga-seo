@@ -1,0 +1,45 @@
+{
+    "name": "Zolinga SEO",
+    "version": "1.0",
+    "description": "SEO services and features for Zolinga.",
+    "authors": [
+        "Daniel Sevcik <danny@zolinga.org>"
+    ],
+
+    "attributes": {},
+
+    "listen": [
+        {
+            "description": "Submit URLs to search engines via IndexNow.",
+            "event": "seo:submit",
+            "class": "\\Zolinga\\Seo\\Listeners\\IndexNowListener",
+            "method": "onSubmit",
+            "origin": [
+                "internal"
+            ],
+            "priority": 0.5
+        }
+    ],
+
+    "emit": [],
+
+    "webComponents": [],
+
+    "autoload": {
+        "Zolinga\\Seo\\": "src/"
+    },
+
+    "dependencies": [],
+
+    "config": {
+        "seo": {
+            "# indexNow": "Bing index initiative https://www.bing.com/indexnow",
+            "indexNow": {
+                "# enabled": "Whether to enable IndexNow for faster search engine indexing.",
+                "enabled": false,
+                "# apiKey": "Obtained from https://www.bing.com/indexnow/getstarted",
+                "apiKey": false
+            }
+        }
+    }
+}
